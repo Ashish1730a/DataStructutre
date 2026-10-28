@@ -2,15 +2,36 @@ public class TransposeMatrix {
     public static int [][] transposeMatrix(int arr[] []){
         int n=arr.length;
         int m=arr[0].length;
-        int EndRow=n-1;
-        int EndCol=m-1;
-        int matrix[][]= new int [m][n];
-        for(int row=0;row<=EndRow;row++){
-            for(int col=0;col<=EndCol;col++){
-                matrix[col][row]=arr[row][col];
+
+        //VALID FOR ALL THE MATRIX
+        // int EndRow=n-1;
+        // int EndCol=m-1;
+        // int matrix[][]= new int [m][n];
+        // for(int row=0;row<=EndRow;row++){
+        //     for(int col=0;col<=EndCol;col++){
+        //         matrix[col][row]=arr[row][col];
+        //     }
+        // }
+
+
+
+        // VALID FOR SQUARE MATRIX
+        //TRANSPOSE MATRIX WITHOUT USING NEW ARRAY
+        
+        int currRow =0;
+        int currCol=0;
+        while(currRow<n && currCol<m){
+            int row=currRow;
+            for(int col=currCol;col<n;col++){
+                int temp = arr[row][col];
+                arr[row][col] = arr[col][row];
+                arr[col][row] = temp;
             }
+            currRow++;
+            currCol++;
         }
-        return matrix;
+
+        return arr;
 
     }
     public static void main(String[] args) {
