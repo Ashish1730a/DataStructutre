@@ -1,3 +1,5 @@
+//NORMAL STRING COMPRESSION - StringBuilder Approach
+
 public class stringCompressed {
     public static String compressedString(String str){
         StringBuilder sc=new StringBuilder("");
